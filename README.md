@@ -1,56 +1,50 @@
 
-# Naija Sell and Earn
+# 🚀 Naija Sell and Earn - Deployment Guide
 
-A professional Nigerian commission-based resale marketplace for Suppliers (Owners), Affiliates (Sellers), and Admins.
+This project is built for high performance using React and ESM. Follow these steps to get your marketplace live.
 
-## Project Structure
-- **Website**: Built with React, TypeScript, and Tailwind CSS.
-- **Mobile App**: Designed to share the same logic, to be built with React Native.
-
-## Developer Info
-- **Name**: Okewu Samuel Owoicho
-- **Email**: okewusamuelowoicho@gmail.com
-- **Phone/WhatsApp**: +2349063676131
-- **LinkedIn**: [www.linkedin.com/in/sammy1000](https://www.linkedin.com/in/sammy1000)
+## 👤 Developer Information
+- **Name:** Okewu Samuel Owoicho
+- **Email:** okewusamuelowoicho@gmail.com
+- **Phone/WhatsApp:** +2349063676131
+- **LinkedIn:** [www.linkedin.com/in/sammy1000](https://www.linkedin.com/in/sammy1000)
 
 ---
 
-## Step-by-Step Instructions
+## 🔑 Environment Variables
+To make the app fully functional with real payments and SMS, you must set these variables in **Vercel Settings > Environment Variables**:
 
-### 1. How to View & Run the Website
-Since you are using **GitHub Codespaces**:
-1. Open your repository in GitHub Codespaces.
-2. In the terminal, run: `npm install`
-3. Then run: `npm start`
-4. A popup will appear saying "A service is running on port 3000". Click **Open in Browser**.
-
-### 2. How to Create the Mobile App (React Native)
-Since you want two repositories, follow these steps to start the mobile app:
-1. Create a new repository on GitHub named `naija-sell-mobile`.
-2. Open it in a new Codespace.
-3. Run: `npx react-native init NaijaSellApp --template react-native-template-typescript`
-4. Copy the logic from the `types.ts`, `constants.tsx`, and `services/` from the Web repo to the Mobile repo.
-5. Use `react-navigation` for mobile routing instead of `react-router-dom`.
-6. Use `NativeBase` or `Styled Components` for mobile UI (Tailwind works via `nativewind`).
-
-### 3. How to Deploy the Website on Vercel
-1. Go to [vercel.com](https://vercel.com) and sign in with GitHub.
-2. Click **Add New** > **Project**.
-3. Select your `naija-sell-web` repository.
-4. Keep the default settings (Build Command: `npm run build`, Output Directory: `dist` or `build`).
-5. Click **Deploy**.
-6. Once finished, you will get a `.vercel.app` link.
+| Variable | Description |
+| :--- | :--- |
+| `VITE_PAYSTACK_PUBLIC_KEY` | Your Paystack Public Key (Starts with `pk_`) |
+| `VITE_TERMII_API_KEY` | Your Termii API Key for OTP SMS |
+| `VITE_ADMIN_EMAIL` | `okewusamuelowoicho@gmail.com` |
+| `VITE_ADMIN_PHONE` | `+2349063676131` |
 
 ---
 
-## Features Implemented
-- **Landing Page**: Professional hero section and automatic 3-second product slider.
-- **Product Detail**: Real-time commission calculation and "Copy My Seller Link" functionality.
-- **Admin Panel**: Management view for Okewu Samuel Owoicho to oversee payouts and system health.
-- **Dashboards**: Dedicated views for Suppliers (Owners) and Affiliates (Sellers) with data visualization.
-- **Checkout**: Mock split payment flow demonstrating the 90/5/5 split logic.
+## 🛠 Step 1: Push to GitHub (From Codespaces)
+Run these in your terminal:
+1. `git add .`
+2. `git commit -m "Finalizing professional marketplace with Env Vars"`
+3. `git push origin main`
 
-## Technical Notes
-- **Payments**: Designed for Paystack/Flutterwave split API integration.
-- **Auth**: Simulated multi-role authentication.
-- **Styling**: Fully responsive Tailwind CSS layout.
+## 🌐 Step 2: Deploy to Vercel
+1. Log in to [Vercel](https://vercel.com) using your GitHub account.
+2. Click **"Add New"** > **"Project"**.
+3. Import your repository.
+4. **IMPORTANT:** Before clicking Deploy, open the **Environment Variables** section and add the keys from the table above.
+5. Set **Framework Preset** to **"Other"**.
+6. Click **"Deploy"**.
+
+## 📱 Step 3: View the Project
+- **Website:** Vercel will provide a URL like `naija-sell-and-earn.vercel.app`.
+- **Mobile View:** The UI is "Mobile-First" and will automatically look like a professional mobile app when opened on a phone!
+
+---
+
+## 💰 Payment Logic Reminder
+The system is designed for automatic splits:
+- **90%:** To the Product Owner.
+- **5%:** To you (Okewu Samuel Owoicho) as the Platform Admin.
+- **5%:** To the Seller as an Affiliate Commission.

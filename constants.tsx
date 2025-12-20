@@ -1,10 +1,16 @@
 
 import { Product, UserRole } from './types';
 
+// Accessing Environment Variables (Assuming a standard bundler setup or Vercel injection)
+// We use a fallback to the values you provided for the mock experience
 export const APP_NAME = "Naija Sell and Earn";
 export const ADMIN_NAME = "Okewu Samuel Owoicho";
-export const ADMIN_EMAIL = "okewusamuelowoicho@gmail.com";
-export const ADMIN_PHONE = "+2349063676131";
+export const ADMIN_EMAIL = (import.meta as any).env?.VITE_ADMIN_EMAIL || "okewusamuelowoicho@gmail.com";
+export const ADMIN_PHONE = (import.meta as any).env?.VITE_ADMIN_PHONE || "+2349063676131";
+
+// API Keys for Integrations
+export const PAYSTACK_PUBLIC_KEY = (import.meta as any).env?.VITE_PAYSTACK_PUBLIC_KEY || "pk_test_mock_key";
+export const TERMII_API_KEY = (import.meta as any).env?.VITE_TERMII_API_KEY || "mock_termii_key";
 
 export const MOCK_PRODUCTS: Product[] = Array.from({ length: 12 }).map((_, i) => ({
   id: `prod-${i + 1}`,
