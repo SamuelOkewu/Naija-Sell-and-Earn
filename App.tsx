@@ -71,7 +71,7 @@ const App: React.FC = () => {
         </main>
         <footer className="bg-white border-t py-8">
           <div className="max-w-7xl mx-auto px-4 text-center">
-            <p className="text-gray-500">&copy; 2024 Naija Sell and Earn. Built with Passion by Okewu Samuel Owoicho.</p>
+            <p className="text-gray-500">&copy; 2024 Naija Sell and Earn. Built by Okewu Samuel Owoicho.</p>
           </div>
         </footer>
       </div>
