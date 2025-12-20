@@ -1,9 +1,10 @@
 
 import { Product } from './types';
 
-// Robust environment variable accessor for Vite/Vercel
+// Standard Vite environment variable accessor
 const getEnv = (key: string, fallback: string) => {
-  return (import.meta as any).env?.[key] || fallback;
+  // Use type assertion to any to resolve "Property 'env' does not exist on type 'ImportMeta'"
+  return (import.meta as any).env[key] || fallback;
 };
 
 export const APP_NAME = "Naija Sell and Earn";
